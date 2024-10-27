@@ -432,8 +432,8 @@ import java.security.Security;
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enable", "true");
-        prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.host", "smpt");
+        prop.put("mail.smtp.port", "private");
 
         // Create session with authentication
         Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
@@ -491,13 +491,13 @@ import java.security.Security;
 
             Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("p98846575@gmail.com", "yykr lksv ohfr avpy");
+                    return new PasswordAuthentication("personal detail get ur app password");
                 }
             });
 
             // Construct and send email
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("p98846575@gmail.com"));
+            message.setFrom(new InternetAddress("personal detail get ur app password"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             message.setSubject("Password Manager Password Reset");
             message.setText("Hello " + this.username + ",\n\nYour password reset code is: " + resetCode);
